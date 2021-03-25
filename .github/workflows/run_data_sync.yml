@@ -91,8 +91,8 @@ jobs:
       - name: Make svg GitHub profile
         if: env.RUN_TYPE != 'pass'
         run: |
-          python scripts/gen_svg.py --from-db --title "${{ env.TITLE }}" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.5
-          python scripts/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}"  --output assets/grid.svg --min-distance 10.0 --special-color yellow --special-color2 red --special-distance 20 --special-distance2 40 --use-localtime
+          python scripts/gen_svg.py --from-db --title "${{ env.TITLE }}" --type github --athlete "${{ env.ATHLETE }}" --special-distance 0.5 --special-distance2 5 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.1
+          python scripts/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}"  --output assets/grid.svg --min-distance 1 --special-color yellow --special-color2 red --special-distance 5 --special-distance2 10 --use-localtime
           python scripts/gen_svg.py --from-db --type circular --use-localtime
 
       - name: Push new runs
