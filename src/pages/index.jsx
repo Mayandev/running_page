@@ -21,7 +21,7 @@ import { IS_CHINESE, USE_ANIMATION_FOR_GRID } from 'src/utils/const';
 
 export default () => {
   const { activities, thisYear } = useActivities();
-  const [year, setYear] = useState(thisYear);
+  const [year, setYear] = useState('Total');
   const [runIndex, setRunIndex] = useState(-1);
   const [runs, setActivity] = useState(
     filterAndSortRuns(activities, year, filterYearRuns, sortDateFunc)
