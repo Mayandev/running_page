@@ -22,7 +22,7 @@ env:
   RUN_TYPE: keep # support strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava, Please change the 'pass' it to your own
   ATHLETE: Mingyuan
   TITLE: Mingyuan's Running
-  TITLE_GRID: Over 10km Runs
+  TITLE_GRID: Over 2km Runs
   GITHUB_NAME: mayandev
   GITHUB_EMAIL: phillzou@gmail.com
 
