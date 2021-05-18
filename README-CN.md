@@ -35,6 +35,7 @@
 | [AhianZhang](https://github.com/AhianZhang) | https://running.ahianzhang.com | Keep |
 | [L1cardo](https://github.com/L1cardo) | https://run.licardo.cn | Nike |
 | [luckylele666](https://github.com/luckylele666) | https://0000928.xyz | Strava |
+| [MFYDev](https://github.com/MFYDev) | https://mfydev.run | Garmin-cn |
 
 ## 它是怎么工作的
 
@@ -50,6 +51,8 @@
 6. Nike 及 Runtastic(Adidas Run) 以及佳明（佳明中国）及 Keep 等, 自动备份 gpx 数据，方便备份及上传到其它软件
 
 > 因为数据存在 gpx 和 data.db 中，理论上支持几个软件一起，你可以把之前各类 app 的数据都同步到这里（建议本地同步，之后 actions 选择正在用的 app）
+
+> 注: 如果你不想公开数据，可以选择 strava 的模糊处理，或 private 仓库。
 
 <details>
 <summary>缩放地图彩蛋</summary>
@@ -285,6 +288,8 @@ python3(python) scripts/garmin_sync.py example@gmail.com example --is-cn
 <details>
 <summary>获取 Nike Run Club 数据</summary>
 
+**请注意：当您选择将 running_page 部署在自己的服务器上时，由于 Nike 已经封禁了一部分 IDC 的服务器 IP 段，您的服务器可能不能正常同步 Nike Run Club 的数据并显示 `403 error` ，这时您将不得不选择其他的托管方式。**
+
 获取 Nike 的 refresh_token
 1. 登录 [Nike](https://www.nike.com) 官网
 2. In Developer -> Application-> Storage -> https:unite.nike.com 中找到 refresh_token
@@ -410,7 +415,7 @@ https://github.com/flopp/GpxTrackPoster
 ## server(recommend vercel)
 
 <details>
-<summary>使用 vercel 部署</summary>
+<summary>使用 Vercel 部署</summary>
 
 1. vercel 连接你的 GitHub repo
 
@@ -422,6 +427,24 @@ https://github.com/flopp/GpxTrackPoster
 
 2. 等待部署完毕
 3. 访问
+</details>
+
+<details>
+<summary> 使用 Cloudflare 部署 </summary>
+<br>
+
+1. 在 `Pages` 中点击 `Create a project` 以连接到你的仓库
+
+2. 点击 `Begin setup` 后，修改项目的 `Build settings`。
+
+3. 在 `Framework preset` 中选择 `Gatsby` 框架。
+
+4. 向下滚动，点击 `Environment variables` 修改变量如下：
+
+   > Variable name = `PYTHON_VERSION`, Value = `3.7`
+
+5. 点击 `Save and Deploy`，完成部署。
+
 </details>
 
 <details>
